@@ -1,6 +1,6 @@
 # LogJournal.md
 
-## 2025-01-02
+## 2026-01-02
 
 ### 
 
@@ -87,6 +87,12 @@ This may also help the reviewers understand the reason behind my choices and dec
     - I tested the method by uploading the etf in insomnia(similar to postman) as form-data on the 
     url http://localhost:8000/api/upload-etf as POST method.
     - Created a init inside the api folder to package all the routers and export them to be used in main.py
+
+6. Implemented the constituents endpoint 
+    - created a constituents GET route which takes a file as passes it in the etf_service.upload_etf method.
+    - this service returns a list of constituents with name, weight and price. IT is list of dict because i will be using AG grid library for the table view and it requires data in that format.
+
+
 
 
 
