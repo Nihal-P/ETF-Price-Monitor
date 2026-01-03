@@ -1,5 +1,5 @@
 from fastapi import UploadFile, HTTPException, APIRouter
-from services import etf_service
+from services.upload_etf_to_db import upload_etf_to_db
 
 router = APIRouter()
 
@@ -19,7 +19,7 @@ def upload_etf(file: UploadFile):
         raise HTTPException(status_code=400, detail="File must be a CSV file")
     
     try:
-        result = etf_service.upload_etf(file.file)
+        result = upload_etf_to_db(file.file)
         return result
 
     except Exception as e:

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from services import etf_service
+from services.calculate_etf_price import calculate_etf_price
 
 router = APIRouter()
 
@@ -14,7 +14,7 @@ def get_etf_prices():
         List[Dict]: A list of dicts containing the date and price of the ETF
     """
     try:
-        result = etf_service.get_etf_prices()
+        result = calculate_etf_price()
         return result
     
     # error if etf data is not found or so other invalid input

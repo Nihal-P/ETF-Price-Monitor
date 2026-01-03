@@ -101,6 +101,31 @@ This may also help the reviewers understand the reason behind my choices and dec
     - tested the method in insomnia(similar to postman) as GET method on the 
     url http://localhost:8000/api/etf-prices.
 
+# Thinking to change the architecture
+- I am thinking to create a local db to store the etf data and prices data so i can show the data is persistent and not just in memory.
+- I can use  sqlite for the local db from sqlalchemy. So when the user parses the etf file, i can store it in the db and use it for the constituents and etf prices endpoints this way i can use queries to get the data.
+
+1. Update the backend structure to include a new database file that creates the models of the etf and prices data.
+- Update the etf_service to use the database instead of static data.
+
+the serivce can now be divided into smaller files now that they don't have to relay on the static data
+stored in the global var. If i create a db then i can move those static data in to the db.
+
+The main reason for this change is to show my understanding the database in the full stack app even though there may not be high usage in the project. Also help me answer the indexing interview question i was asked in the tech interview. 
+For example i indexed the date so it essentiall create a b-tree to make the query faster. For example we have 2 endpoints that requires calculations on the last price of the ETF, since we have it indexed the query will just need to get the max date and return the price. otherwise it would have to traverse the whole table to find the max date.
+
+2. Implemented the final endpoint for the bar chart
+    - created a final get method that returns the top holdings of the ETF
+    - also tested this method in insomnia(similar to postman) as GET method on the url http://localhost:8000/api/top-holdings
+
+
+
+
+
+
+
+
+
 
 
 

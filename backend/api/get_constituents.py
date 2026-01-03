@@ -1,5 +1,5 @@
 from fastapi import UploadFile, HTTPException, APIRouter
-from services import etf_service
+from services.retrieve_constituents import retrieve_constituents
 
 router = APIRouter()
 
@@ -14,7 +14,7 @@ def get_constituents():
         List[Dict]: A list of dicts containing the name, weight and latest price of each constituent
     """
     try:
-        result =  etf_service.get_constituents()
+        result =  retrieve_constituents()
         return result
 
     except Exception as e:
