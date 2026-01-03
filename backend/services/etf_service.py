@@ -66,7 +66,7 @@ def get_constituents() -> list:
     Sources used:
         https://stackoverflow.com/a/67922262
     """
-    
+
     if ETF_DATA is None:
         raise ValueError("ETF data not found")
     
@@ -93,7 +93,49 @@ def get_constituents() -> list:
     
     return constituents
             
+def get_etf_prices() -> list:
+    """
+    Get the ETF prices for the time series plot
 
+    Calculates the etf price for each data by combining the weight and price of each constituent.
+    
+    Returns:
+        list: A list of ETF prices for each date
+    
+    Raises:
+        ValueError: If the ETF data is not found
+    """
+    
+    if ETF_DATA is None:
+        raise ValueError("ETF data not found")
 
+    etf_time_series = []
+
+    # extracting the constituents and weights from the etf data first otherwise we have to iterate over in the loop as a pandas dataframe
+    constituents = ETF_DATA['name'].tolist()
+    weights = ETF_DATA['weight'].tolist()
+
+    # this is a big(n x m), n = number of dates, m = number of constituents
+    for i, row in PRICES_DATA.iterrows():
+        # we know the row will contain data in this format:
+        # row = {"DATE": "2017-01-01", "A": 2.32, "B": 3.707, "C": 30.970, ...}
+        date = row['DATE']
+
+        # getting the prices of the constituents from each row
+        # since we have extracted the constituents we can get the price from the row
+        prices = [row[name] for name in constituents]
+        
+        etf_price = 0.0
+
+        #found a zip function that we can use to iterate over the weights and prices at the same time
+        for weight, price in zip(weights, prices):
+            etf_price += weight * price
+        
+        etf_time_series.append({
+            "date": date,
+            "price": round(etf_price, 2)
+        })
+    
+    return etf_time_series
 
 

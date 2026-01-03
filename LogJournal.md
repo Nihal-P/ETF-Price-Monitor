@@ -93,6 +93,14 @@ This may also help the reviewers understand the reason behind my choices and dec
     - this service returns a list of constituents with name, weight and price. IT is list of dict because i will be using AG grid library for the table view and it requires data in that format.
 
 
+## 2026-01-03
+
+1. Implemented the etf prices endpoint
+    - created a etf_prices GET route which takes a file as passes it in the etf_service.upload_etf method.
+    - this service returns list of dict with date and price so its compatible with the time series chart, when i will be using Echarts.
+    - tested the method in insomnia(similar to postman) as GET method on the 
+    url http://localhost:8000/api/etf-prices.
+
 
 
 
