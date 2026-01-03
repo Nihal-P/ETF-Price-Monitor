@@ -6,7 +6,6 @@
 
 The purpouse of this log journal is to document my progress and thoughts as I work on this project.
 This may also help the reviewers understand the reason behind my choices and decisions.
-Also hopefully ensure my own knowledge was used and not created by AIs.
 
 ### 
 
@@ -30,7 +29,7 @@ Also hopefully ensure my own knowledge was used and not created by AIs.
         - later other charts
         - Also considering Redux but not sure there seems to be a use case since we are only going to be displaying the data and there is no manipulation required. but might come back to this.
     - Libraries:
-        - Chart.js for charts. Was thinking of using AG grid for the table view but requires enterprise for that.
+        - ~~Chart.js for charts. Was thinking of using AG grid for the table view but requires enterprise for that.~~ Actually there is AG grid community version which is free. and Echarts for other charts since we require a zoomable time series chart.
         - Axios for API calls.
 - Backend: Python with FastAPI.
     - used for HTTP/REST API calls.
@@ -57,4 +56,38 @@ Also hopefully ensure my own knowledge was used and not created by AIs.
     - added CORS middleware to allow requests from the frontend.
     - added a health check endpoint.
     - got the server running using `uvicorn main:app --reload`
-    
+
+4. Understand frontend UI to create the structure of the api endpoints.
+    - now to create the structure of the api endpoints i need understand what needs to be shown in the frontend.
+    - a. File upload component.
+        - we can create a button or dropzone to upload the file.
+        - this will trigger a POST method to /upload-etf endpoint.
+        - this will return a success message or error message.
+    - b. interactive table
+        - a table that wiill basically show each constituent and its weight.
+        - this will trigger a GET method to /constituents endpoint.
+        - assuming a response like:
+            Response: [
+               {"name": "A", "weight": 0.087, "price": 27.03},
+               {"name": "F", "weight": 0.146, "price": 49.10}, 
+            ]
+    - c. Time series chart
+        - similar get method as the table
+        - Response: [
+           {"date": "2017-01-01", "price": 65.32},...]
+    - d. bar chart
+        - similar get method as the table
+        - Response: [
+           {"name": "A", "value": 11.23, "weight": 0.087, "price": 27.03},...]
+
+5. Implemented the first upload endpoint
+    - created a upload_etf POST route which takes a file as passes it in the etf_service.upload_etf method.
+    - that service currently just returns a success message or error message with basic stats so we can
+    verify the file was uploaded correctly.
+    - I tested the method by uploading the etf in insomnia(similar to postman) as form-data on the 
+    url http://localhost:8000/api/upload-etf as POST method.
+    - Created a init inside the api folder to package all the routers and export them to be used in main.py
+
+
+
+

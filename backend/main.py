@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from api.routes import router
+from api import api_router
 
 # from my understanding this is a similar thing as how we setup in express.js for the entrypoing of the app
 app = FastAPI(
@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # just to add a prefix to the routes
-# app.include_router(router, prefix="/api")
+app.include_router(api_router, prefix="/api")
 
 @app.get("/")
 def read_root():
