@@ -8,6 +8,8 @@
 - Backend: Python, FastAPI, SQLAlchemy, Pandas, SQLite
 - Frontend: React, TypeScript, AG Grid, ECharts, Bootstrap CSS
 - Containerization: Docker, Docker Compose
+Video Walkthrough:
+
 
 # Pre-requisites
 
@@ -33,7 +35,7 @@
 Alternative Setup Instructions
 
 1. Start backend:
-
+```
 # Navigate to backend directory
 
 `cd backend`
@@ -59,9 +61,9 @@ Alternative Setup Instructions
 # Start backend server
 
 `uvicorn main:app --reload`
-
+```
 2. Start Frontend
-
+```
 # Navigate to frontend directory
 
 `cd frontend`
@@ -73,10 +75,11 @@ Alternative Setup Instructions
 # Start development server
 
 `npm start`
+```
 
 ## Project Structure
 
-<!-- Used https://project-tree-generator.netlify.app/generate-tree to create the strucutre -->
+Used https://project-tree-generator.netlify.app/generate-tree to create the strucutre
 
 ```
 ETF-Price-Monitor/
@@ -147,9 +150,9 @@ ETF-Price-Monitor/
    - I used ECharts for the rest of thecharts due to built-in zoom functionality (AG Grid zoom requires enterprise license)
    - Bootstrap CSS used for styling instead of Tailwind CSS to avoid complex setup.
 
-<!-- ================================ -->
-<!-- ========== Assignment ========== -->
-<!-- ================================ -->
+
+## ========== Assignment ==========
+
 
 Full Stack Developer Interview
 This is an interview for the full stack data developer role at BMO Capital Markets' Data Cognition Team.
