@@ -4,7 +4,7 @@ the prices csv file will be the only one that will be used and assume will be co
 """
 
 import pandas as pd
-from database import SessionLocal, Price
+from database.database import SessionLocal, Price
 def load_prices():
     db = SessionLocal()
     
