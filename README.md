@@ -13,6 +13,9 @@ Video Walkthrough: (click the image to open the youtube link)
 
 [<img src="https://img.youtube.com/vi/5eVOzblcDmc/maxresdefault.jpg" width="600" alt="Watch the ETF Monitor Demo">](https://www.youtube.com/watch?v=5eVOzblcDmc)
 
+# Log Journal
+I have also created a another md file called [LogJournal.md](https://github.com/Nihal-P/ETF-Price-Monitor/blob/main/LogJournal.md) where I logged all my thoughts and process while making this App.
+
 
 # Pre-requisites
 
