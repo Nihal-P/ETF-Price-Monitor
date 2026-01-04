@@ -119,6 +119,37 @@ For example i indexed the date so it essentiall create a b-tree to make the quer
     - also tested this method in insomnia(similar to postman) as GET method on the url http://localhost:8000/api/top-holdings
 
 
+## Starting with the Frontend
+
+1. Strucutre and starting goals:
+    - for the strucure I am thinking to create 2 directories inside the src.
+        - components: each file will represent a component that we have the API endpoint for.
+            - FileUpload.tsx : for the file upload.
+            - Constituents.tsx : for etf table .
+            - EtfPrices.tsx : for the etf prices time series chart.
+            - TopHoldings.tsx : for the top holdings bar chart.
+        - Services: 
+            - apiService.ts: stores the API calls.
+    - The App.tsx will be the main component that will render the other components.
+        - the app tsx will first render the file upload component.
+        - if the file is uploaded successfully, it will render the dashboards
+    
+    - The libraries i am thinking to use is
+        - AG Grid community version for the table view.
+        - Echarts for the other charts. The reason i am thinking to use Echarts is because it is has zoom option. AG grid zoom option is not free.
+        - Axios for API calls.
+        - maybe a libary for the file upload?
+
+    - ASSUMPTION: I am thinking not to use any state management library like redux. The purpose of Redux is to manage the state of the app when data is being used in multiple components. But that is
+    not the case for my app since i am setup different endpoints for each component. And the requirement of the project is to different charts with different meanings so they are not overlapping.
+
+2. Implemented the file upload component
+    - created a file upload component that will allow the user to upload the file.
+    - the file upload component will use the apiService to upload the file.
+    - to test for no i create a input button to upload the file and call the apiService to upload the file. if uploaded successfully, the info is passed back to the App.tsx and it will render the dashboards. I am thinking to do CSS at the end.
+
+
+
 
 
 
