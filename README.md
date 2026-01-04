@@ -11,7 +11,7 @@
   
 Video Walkthrough: (click the image to open the youtube link)
 
-[<img src="https://img.youtube.com/vi/_Aj-BjTBofo/maxresdefault.jpg" width="600" alt="Watch the ETF Monitor Demo">](https://www.youtube.com/watch?v=_Aj-BjTBofo)
+[<img src="https://img.youtube.com/vi/5eVOzblcDmc/maxresdefault.jpg" width="600" alt="Watch the ETF Monitor Demo">](https://www.youtube.com/watch?v=5eVOzblcDmc)
 
 
 # Pre-requisites
