@@ -8,7 +8,10 @@
 - Backend: Python, FastAPI, SQLAlchemy, Pandas, SQLite
 - Frontend: React, TypeScript, AG Grid, ECharts, Bootstrap CSS
 - Containerization: Docker, Docker Compose
-Video Walkthrough:
+  
+Video Walkthrough: (click the image to open the youtube link)
+
+[<img src="https://img.youtube.com/vi/_Aj-BjTBofo/maxresdefault.jpg" width="600" alt="Watch the ETF Monitor Demo">](https://www.youtube.com/watch?v=_Aj-BjTBofo)
 
 
 # Pre-requisites
