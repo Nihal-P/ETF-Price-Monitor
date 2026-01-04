@@ -171,4 +171,10 @@ For example i indexed the date so it essentiall create a b-tree to make the quer
 ## 2026-01-04
 
 1. Implemented the CSS for the dashboard
+
    - used bootstrap for the layout and spacing. Was thinking to use tailwindcss but installating was a bit of a hassle.
+
+2. Dockerize the app
+   - created a dockerfile for both the frontend and backend.
+   - created a dockerignore file for both the frontend and backend.
+   - created a docker-compose.yml file to run both the frontend and backend.
