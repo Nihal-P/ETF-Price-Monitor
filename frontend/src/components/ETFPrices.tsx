@@ -5,9 +5,15 @@ interface ETFPriceChartProps {
 }
 const ETFPriceChart: React.FC<ETFPriceChartProps> = ({ prices }) => {
   const option = {
+    backgroundColor: "transparent",
     title: {
       text: "Zoomable ETF Price Time Series",
       left: "center",
+      textStyle: {
+        color: "#000000",
+        fontSize: 18,
+        fontWeight: 600,
+      },
     },
     tooltip: {
       trigger: "axis",
@@ -50,7 +56,7 @@ const ETFPriceChart: React.FC<ETFPriceChartProps> = ({ prices }) => {
   };
   return (
     <div>
-      <ReactECharts option={option} style={{ height: 400, width: "100%" }} />
+      <ReactECharts option={option} style={{ height: 449 }} />
     </div>
   );
 };

@@ -22,8 +22,8 @@ const ConstituentsTable: React.FC<ConstituentsTableProps> = ({
   ];
   return (
     <div>
-      <h2>ETF Constituents Time Series</h2>
-      <div style={{ height: 400, width: 620, margin: "auto" }}>
+      <p className="text-center pt-4 fw-bold fs-5">ETF Constituents</p>
+      <div style={{ height: 500, width: 620, margin: "auto" }}>
         <AgGridReact
           theme={themeQuartz}
           rowData={constituents}

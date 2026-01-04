@@ -50,18 +50,47 @@ function App() {
   // passed as props
   return (
     <div className="App">
-      <h1>ETF Price Monitor</h1>
-      <h2>By: Nihal Patel</h2>
-
-      <FileUpload onUploadSuccess={handleUploadSuccess} />
-      {loading && <p>Loading...</p>}
-      {dataFound && !loading && (
-        <>
-          <ConstituentsTable constituents={constituents} />
-          <ETFPrices prices={etfPrices} />
-          <TopHoldings topHoldings={topHoldings} />
-        </>
-      )}
+      <div className="container-fluid p-4">
+        {/* header */}
+        <div className="bg-dark rounded-3 p-4 mb-4 shadow">
+          <h1 className="text-white fw-bold mb-2">ETF Price Monitor</h1>
+          <p className="text-secondary mb-3">By: Nihal Patel</p>
+          <FileUpload onUploadSuccess={handleUploadSuccess} />
+        </div>
+        {/* loading State */}
+        {loading && (
+          <div className="text-center text-secondary py-5">
+            <div className="spinner-border text-primary me-2" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+            Loading dashboard...
+          </div>
+        )}
+        {/* dashboard */}
+        {dataFound && !loading && (
+          <div>
+            <div className="row g-4 mb-4">
+              <div className="col-lg-7  ">
+                <div className="bg-light rounded-3 shadow pb-4">
+                  <ConstituentsTable constituents={constituents} />
+                </div>
+              </div>
+              <div className="col-lg-5">
+                <div className="bg-light rounded-3 p-4 shadow">
+                  <TopHoldings topHoldings={topHoldings} />
+                </div>
+              </div>
+            </div>
+            <div className="row g-4">
+              <div className="col-12">
+                <div className="bg-light rounded-3 p-4 shadow">
+                  <ETFPrices prices={etfPrices} />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

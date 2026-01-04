@@ -39,7 +39,10 @@ const TopHoldings: React.FC<TopHoldingsProps> = ({ topHoldings }) => {
   };
   return (
     <div>
-      <ReactECharts option={option} style={{ height: 400, width: "100%" }} />
+      <ReactECharts
+        option={option}
+        style={{ height: 545, width: "100%", margin: "auto" }}
+      />
     </div>
   );
 };

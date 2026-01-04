@@ -167,3 +167,8 @@ For example i indexed the date so it essentiall create a b-tree to make the quer
    - They are only mounted once the api calls are successful in the App.tsx
 
 4. Also updated the main.py in the backend to create a startup event that will run when the server starts. this way we can load the prices data into the database when the server starts.
+
+## 2026-01-04
+
+1. Implemented the CSS for the dashboard
+   - used bootstrap for the layout and spacing. Was thinking to use tailwindcss but installating was a bit of a hassle.

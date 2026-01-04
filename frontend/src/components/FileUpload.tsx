@@ -34,11 +34,27 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess }) => {
   };
 
   return (
-    <div>
-      <h2>Upload ETF CSV</h2>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
-      <button onClick={handleUploadFile} disabled={uploading}>
-        {uploading ? "Uploading..." : "Upload"}
+    <div className="d-flex align-items-center gap-3">
+      <input
+        type="file"
+        accept=".csv"
+        onChange={handleFileChange}
+        className="form-control form-control-sm"
+        style={{ maxWidth: "300px" }}
+      />
+      <button className="btn btn-primary" onClick={handleUploadFile}>
+        {uploading ? (
+          <>
+            <span
+              className="spinner-border spinner-border-sm me-2"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Uploading...
+          </>
+        ) : (
+          "Upload Data"
+        )}
       </button>
     </div>
   );
