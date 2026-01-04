@@ -1,0 +1,21 @@
+# Source used:
+# https://docs.docker.com/reference/compose-file/build/
+services:
+  backend:
+    build:
+      context: ./backend #to find the backend Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./backend/database:/app/database
+
+  frontend:
+    build: # to find the frontend Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

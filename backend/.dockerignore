@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+venv/
+.git/
+.gitignore
+.DS_Store
+.vscode/
+database/etf_data.db
